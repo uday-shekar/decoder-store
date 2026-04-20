@@ -1,22 +1,27 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+// Components
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
 
-// Pages
-import Home from "./pages/Home";
-import Shop from "./pages/Shop";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Contact from "./pages/Contact";
+// Pages (make sure folder name = pages)
+import Home from "./pages/Home.jsx";
+import Shop from "./pages/Shop.jsx";
+import About from "./pages/About.jsx";
+import Services from "./pages/Services.jsx";
+import Contact from "./pages/Contact.jsx";
 
 // Scroll to top on route change
 function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0); // simple & safe
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto", // safer than 'instant'
+    });
   }, [pathname]);
 
   return null;
@@ -28,6 +33,7 @@ function App() {
       <ScrollToTop />
 
       <div className="flex flex-col min-h-screen bg-white antialiased selection:bg-black selection:text-white">
+        
         <Navbar />
 
         <main className="flex-grow overflow-x-hidden">
@@ -38,7 +44,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
 
-            {/* fallback */}
+            {/* fallback route */}
             <Route path="*" element={<Home />} />
           </Routes>
         </main>
