@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Shop from './pages/Shop';
-import About from './pages/About';
-import Services from './pages/Services';
-import Contact from './pages/Contact';
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
+import Home from './pages/Home.jsx';
+import Shop from './pages/Shop.jsx';
+import About from './pages/About.jsx';
+import Services from './pages/Services.jsx';
+import Contact from './pages/Contact.jsx';
 
 // ScrollToTop utility: Pages change ainappudu scroll position top ki reset chestundi
 function ScrollToTop() {
