@@ -1,0 +1,28 @@
+/* 1. Imports FIRST */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@600;700;800&display=swap');
+@import "tailwindcss";
+
+/* 2. Theme Configuration SECOND */
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-brand-black: #0a0a0a;
+  --color-brand-gray: #f5f5f5;
+  
+  --letter-spacing-ultra: 0.3em;
+}
+
+/* 3. Base Styles THIRD */
+@layer base {
+  body {
+    @apply bg-white text-brand-black font-sans antialiased;
+  }
+}
+
+/* 4. Custom Components LAST */
+@layer components {
+  .heading-xl {
+    @apply font-serif text-7xl md:text-9xl tracking-tighter leading-[0.85];
+  }
+}

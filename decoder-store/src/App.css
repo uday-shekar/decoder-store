@@ -1,0 +1,99 @@
+/* App Specific Styles */
+ 
+/* Header Sticky Effects */
+header {
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05);
+}
+ 
+/* Smooth scroll behavior for links */
+html {
+  scroll-behavior: smooth;
+}
+ 
+/* Product Card Hover Effects */
+.group:hover {
+  /* Subtle hover effect container */
+}
+ 
+/* Button Hover Effects */
+button {
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+ 
+/* Link Hover Effects */
+a {
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+ 
+/* Image Loading State */
+img {
+  transition: all 300ms ease;
+}
+ 
+/* Form Input Focus */
+input:focus,
+textarea:focus {
+  box-shadow: inset 0 0 0 1px #000000;
+}
+ 
+/* Select Dropdown */
+select {
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+ 
+select:focus {
+  box-shadow: inset 0 0 0 1px #000000;
+}
+ 
+/* Placeholder Styles */
+::placeholder {
+  color: #a8a8a8;
+  font-weight: 300;
+}
+ 
+/* Range Slider */
+input[type="range"] {
+  cursor: pointer;
+}
+ 
+input[type="range"]::-webkit-slider-thumb {
+  cursor: pointer;
+}
+ 
+input[type="range"]::-moz-range-thumb {
+  cursor: pointer;
+}
+ 
+/* Animation for page transitions */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+main {
+  animation: pageEnter 0.4s ease-in-out;
+}
+ 
+/* Responsive Images */
+@media (max-width: 768px) {
+  img {
+    loading: lazy;
+  }
+}
+ 
+/* Print Styles */
+@media print {
+  header,
+  footer,
+  button {
+    display: none;
+  }
+}
+ 
