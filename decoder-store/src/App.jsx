@@ -8,7 +8,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 
-// ScrollToTop utility: Pages change ainappudu auto ga top ki veltundi
+// ScrollToTop utility: Pages change ainappudu scroll position top ki reset chestundi
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -28,21 +28,22 @@ function App() {
     <Router>
       <ScrollToTop />
       
-      {/* selection:bg-black selection:text-white -> idi premium touch mava, 
-        user text select chesinappudu black and white lo highlight avtundi.
+      {/* selection:bg-black selection:text-white -> Premium touch, 
+        user text select chesinappudu black highlight avtundi.
       */}
       <div className="flex flex-col min-h-screen selection:bg-black selection:text-white bg-white antialiased">
         
-        {/* Navbar and Footer static ga untai, madhyalo Content change avtundi */}
         <Navbar />
         
-        <main className="flex-grow overflow-x-hidden pt-16">
+        <main className="flex-grow overflow-x-hidden">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
+            {/* Fallback route: Oka vela page dorakapotthe home ki veltundi */}
+            <Route path="*" element={<Home />} />
           </Routes>
         </main>
 
